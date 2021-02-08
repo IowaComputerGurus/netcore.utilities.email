@@ -1,14 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>ICG.NetCore.Utilities.Email</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>ICG.NetCore.Utilities.Email</PackageId>
     <Title>NetCore Utilities Email</Title>
-    <Description>A library of .NET Standard utilities for working with email.  Used in conjunction with other packages.</Description>
+    <Description>A library of .NET 5 utilities for working with email.  Used in conjunction with other packages.</Description>
     <Copyright>Copyright 2021, IowaComputerGurus All Rights Reserved</Copyright>
     <PackageProjectUrl>https://github.com/IowaComputerGurus/netcore.utilities.email</PackageProjectUrl>
     <PackageTags>aspnetcore;utility;email</PackageTags>

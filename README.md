@@ -12,7 +12,7 @@ ICG.NetCore.Utilities.Email ![](https://img.shields.io/nuget/v/icg.netcore.utili
 ## Usage
 
 ## Installation
-Standard installation via HuGet Package Manager
+Standard installation via NuGet Package Manager
 ```
 Install-Package ICG.NetCore.Utilities.Email
 ```
