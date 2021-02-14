@@ -20,7 +20,8 @@
     <Authors>MitchelSellers;IowaComputerGurus</Authors>
     <Owners>IowaComputerGurus</Owners>
     <PackageIconUrl>https://raw.githubusercontent.com/IowaComputerGurus/netcore.utilities.email/master/icgAppIcon.png</PackageIconUrl>
-    <IsPackable>True</IsPackable><PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IsPackable>True</IsPackable>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
