@@ -42,7 +42,15 @@ You may configure as many additional templates as desired.  All paths are relati
 
 ## Usage
 
-Inline code documentation is included
+Inline code documentation is included for usage within the application.
+
+## Template Tokens
+
+The following tokens are utilized in the templating process
+
+* \[SUBJECT\]
+* \[PREVIEW\]
+* \[CONTENT\]
 
 ## Related Projects
 
