@@ -1,21 +1,16 @@
 # NetCore.Utilities.Email ![](https://img.shields.io/github/license/iowacomputergurus/netcore.utilities.email.svg)
-This is a base library to provide utilities for working with email in .NET 5.  This project is used by more concrete implementations such as NetCore.Utilities.Email.Smtp.
 
-## Build Status
+![Build Status](https://github.com/IowaComputerGurus/netcore.utilities.email/actions/workflows/ci-build.yml/badge.svg)
 
-| Release | Status |
-| --- | ---|
-| Current Release (Master) | ![Master Status](https://iowacomputergurus.visualstudio.com/ICG%20Open%20Source/_apis/build/status/NetCore%20Utilities%20Email?branchName=master) |
-| Future Release (Develop) | ![Develop Status](https://iowacomputergurus.visualstudio.com/ICG%20Open%20Source/_apis/build/status/NetCore%20Utilities%20Email?branchName=develop) |
+![](https://img.shields.io/nuget/v/icg.netcore.utilities.email.svg) ![](https://img.shields.io/nuget/dt/icg.netcore.utilities.email.svg)
 
-## NuGet Package Information
-ICG.NetCore.Utilities.Email ![](https://img.shields.io/nuget/v/icg.netcore.utilities.email.svg) ![](https://img.shields.io/nuget/dt/icg.netcore.utilities.email.svg)
+This is a base library to provide utilities for working with email in .NET 6.  This project is used by more concrete implementations such as NetCore.Utilities.Email.Smtp.
 
 ## Usage
 
 ## Installation
 Standard installation via NuGet Package Manager
-```
+``` powershell
 Install-Package ICG.NetCore.Utilities.Email
 ```
 
@@ -23,13 +18,13 @@ However, it should be noted this is typically added by association from other pa
 
 ## Setup
 To setup the needed dependency injection items for this library, add the following line in your DI setup.
-```
+``` csharp
 services.UseIcgNetCoreUtilitiesEmail();
 ```
 
 You can then configure email templates inside of your applications configuration file.
 
-```
+``` json
 {
   "EmailTemplateSettings": {
     "DefaultTemplatePath": "Template.html",
