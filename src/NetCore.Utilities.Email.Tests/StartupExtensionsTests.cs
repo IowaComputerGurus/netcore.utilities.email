@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ICG.NetCore.Utilities.Email;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -63,7 +63,7 @@ namespace NetCore.Utilities.Email.Tests
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .Build();
-            collection.AddSingleton<IHostingEnvironment>(new Mock<IHostingEnvironment>().Object);
+            collection.AddSingleton<IHostEnvironment>(new Mock<IHostEnvironment>().Object);
             collection.UseIcgNetCoreUtilitiesEmail(configuration);
             var services = collection.BuildServiceProvider();
 

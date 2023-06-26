@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using ICG.NetCore.Utilities.Email;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Moq;
 using Xunit;
@@ -13,13 +13,13 @@ namespace NetCore.Utilities.Email.Tests
     {
         private const string RelativePathToDefault = "..\\..\\..\\Templates\\Default.html";
         private const string RelativePathToSpecial = "..\\..\\..\\Templates\\Special.html";
-        private Mock<IHostingEnvironment> _hostingEnvironmentMock;
-        private Mock<IOptions<EmailTemplateSettings>> _emailTemplateSettingsMock;
+        private static Mock<IHostEnvironment> _hostingEnvironmentMock;
+        private static Mock<IOptions<EmailTemplateSettings>> _emailTemplateSettingsMock;
         private readonly IEmailTemplateFactory _factory;
 
         public EmailContentFactoryTests()
         {
-            _hostingEnvironmentMock = new Mock<IHostingEnvironment>();
+            _hostingEnvironmentMock = new Mock<IHostEnvironment>();
             _hostingEnvironmentMock.Setup(h => h.ContentRootPath).Returns("..\\..\\..\\"); //Provides a path back to the root of the test project
             _emailTemplateSettingsMock = new Mock<IOptions<EmailTemplateSettings>>();
             _emailTemplateSettingsMock.Setup(s => s.Value).Returns(new EmailTemplateSettings
