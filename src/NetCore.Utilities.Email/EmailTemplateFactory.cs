@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
 namespace ICG.NetCore.Utilities.Email
@@ -31,11 +31,11 @@ namespace ICG.NetCore.Utilities.Email
 
     public class EmailTemplateFactory : IEmailTemplateFactory
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IHostEnvironment _hostingEnvironment;
         private readonly IOptions<EmailTemplateSettings> _templateSettings;
 
         public EmailTemplateFactory(IOptions<EmailTemplateSettings> templateSettings,
-            IHostingEnvironment hostingEnvironment)
+            IHostEnvironment hostingEnvironment)
         {
             _templateSettings = templateSettings;
             _hostingEnvironment = hostingEnvironment;
