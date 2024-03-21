@@ -50,13 +50,21 @@ public class EmailTemplateFactory : IEmailTemplateFactory
     {
         //Validate inputs
         if (string.IsNullOrEmpty(subject))
+        {
             throw new ArgumentNullException(nameof(subject));
+        }
+
         if (string.IsNullOrEmpty(content))
+        {
             throw new ArgumentNullException(nameof(content));
+        }
+
         if (!string.IsNullOrEmpty(templateName) &&
             !_templateSettings.Value.AdditionalTemplates.ContainsKey(templateName))
+        {
             throw new ArgumentException($"Requested template {templateName} was not found in configuration",
                 nameof(templateName));
+        }
 
         //Get the template
         var templatePath = string.IsNullOrEmpty(templateName)
@@ -64,7 +72,9 @@ public class EmailTemplateFactory : IEmailTemplateFactory
             : _templateSettings.Value.AdditionalTemplates[templateName];
         var fullTemplatePath = Path.Combine(_hostingEnvironment.ContentRootPath, templatePath);
         if (!File.Exists(fullTemplatePath))
+        {
             throw new FileNotFoundException("Unable to find template file", fullTemplatePath);
+        }
 
         //Replace the content
         var templateBuilder =
