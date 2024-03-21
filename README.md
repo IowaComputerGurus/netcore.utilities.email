@@ -8,7 +8,7 @@ This is a base library to provide utilities for working with email in .NET 6.  T
 
 ## Breaking Changes (Version 7.0)
 
-Starting with version 7.0, all `IEmailService` methods were converted to Async!
+Starting with version 7.0, all `IEmailService` methods have been converted to asynchronous operations.
 
 ## Installation
 Standard installation via NuGet Package Manager
