@@ -42,11 +42,11 @@ jobs:
       run: dotnet test "${{ env.solution-path }}" --no-build --configuration Release --collect "XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover --logger "trx;LogFileName=unittests.trx"
 
     - name: Push Coverage to Codacy
-        shell: bash
-        env:
-          CODACY_ORGANIZATION_PROVIDER: ${{ secrets.CODACY_ORGANIZATION_PROVIDER }}
-          CODACY_USERNAME: ${{ secrets.CODACY_USERNAME }}
-          CODACY_PROJECT_NAME: ${{ secrets.CODACY_PROJECT_NAME }}
-          CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
-        run: |
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report $(find . -name '*.opencover.xml' -printf '-r %p ')
+      shell: bash
+      env:
+        CODACY_ORGANIZATION_PROVIDER: ${{ secrets.CODACY_ORGANIZATION_PROVIDER }}
+        CODACY_USERNAME: ${{ secrets.CODACY_USERNAME }}
+        CODACY_PROJECT_NAME: ${{ secrets.CODACY_PROJECT_NAME }}
+        CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
+      run: |
+        bash <(curl -Ls https://coverage.codacy.com/get.sh) report $(find . -name '*.opencover.xml' -printf '-r %p ')
