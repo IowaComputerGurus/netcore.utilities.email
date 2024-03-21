@@ -6,7 +6,9 @@
 
 This is a base library to provide utilities for working with email in .NET 6.  This project is used by more concrete implementations such as NetCore.Utilities.Email.Smtp.
 
-## Usage
+## Breaking Changes (Version 7.0)
+
+Starting with version 7.0, all `IEmailService` methods were converted to Async!
 
 ## Installation
 Standard installation via NuGet Package Manager
