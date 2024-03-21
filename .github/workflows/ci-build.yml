@@ -37,13 +37,3 @@ jobs:
       
     - name: Build
       run: dotnet build "${{ env.solution-path }}" --no-restore --configuration Release -p:version=${{ steps.gitversion.outputs.majorMinorPatch }}
-
-    - name: Push Coverage to Codacy
-      shell: bash
-      env:
-        CODACY_ORGANIZATION_PROVIDER: ${{ secrets.CODACY_ORGANIZATION_PROVIDER }}
-        CODACY_USERNAME: ${{ secrets.CODACY_USERNAME }}
-        CODACY_PROJECT_NAME: ${{ secrets.CODACY_PROJECT_NAME }}
-        CODACY_API_TOKEN: ${{ secrets.CODACY_API_TOKEN }}
-      run: |
-        bash <(curl -Ls https://coverage.codacy.com/get.sh) report $(find . -name '*.opencover.xml' -printf '-r %p ')
