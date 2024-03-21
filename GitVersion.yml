@@ -1,5 +1,5 @@
 mode: ContinuousDeployment
-next-version: 5.1.4
+next-version: 7.0.0
 branches: 
   develop:
     regex: develop
