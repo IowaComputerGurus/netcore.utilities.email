@@ -66,6 +66,6 @@ jobs:
       shell: powershell
       run: |
         .\.sonar\scanner\dotnet-sonarscanner begin /k:"IowaComputerGurus_netcore.utilities.email" /o:"iowacomputergurus-github" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-        dotnet build "${{ env.solution-path }}" --no-restore --configuration Release -p:version=${{ steps.gitversion.outputs.majorMinorPatch }}otnet build
+        dotnet build "${{ env.solution-path }}" --no-restore --configuration Release -p:version=${{ steps.gitversion.outputs.majorMinorPatch }}
         dotnet test "${{ env.solution-path }}" --no-build --configuration Release --collect "XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover --logger "trx;LogFileName=unittests.trx"
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
