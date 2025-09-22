@@ -166,4 +166,68 @@ public interface IEmailService
     Task<bool> SendMessageWithAttachmentAsync(string toAddress, IEnumerable<string> ccAddressList, string subject,
         byte[] fileContent, string fileName, string bodyHtml, List<KeyValuePair<string, string>> tokens,
         string templateName = "", string senderKeyName = "");
+
+    /// <summary>
+    ///     Sends a message to the specified recipient, with the supplied subject and body using a custom from address
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">Who is receiving the email</param>
+    /// <param name="subject">The message subject</param>
+    /// <param name="bodyHtml">The message body</param>
+    Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress, string subject,
+        string bodyHtml);
+
+    /// <summary>
+    ///     Sends a message to the specified recipient, with the supplied subject and body using a custom from address
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">Who is receiving the email</param>
+    /// <param name="subject">The message subject</param>
+    /// <param name="bodyHtml">The message body</param>
+    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
+    Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress, string subject,
+        string bodyHtml, List<KeyValuePair<string, string>> tokens);
+
+    /// <summary>
+    ///     Sends a message to the specified recipient, with the supplied subject and body using a custom from address
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">Who is receiving the email</param>
+    /// <param name="ccAddressList">Additional CC'ed emails</param>
+    /// <param name="subject">The message subject</param>
+    /// <param name="bodyHtml">The message body</param>
+    Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress,
+        IEnumerable<string> ccAddressList, string subject, string bodyHtml);
+
+    /// <summary>
+    ///     Sends a message to the specified recipient, with the supplied subject and body using a custom from address
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">Who is receiving the email</param>
+    /// <param name="ccAddressList">Additional CC'ed emails</param>
+    /// <param name="subject">The message subject</param>
+    /// <param name="bodyHtml">The message body</param>
+    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
+    Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress,
+        IEnumerable<string> ccAddressList, string subject, string bodyHtml, List<KeyValuePair<string, string>> tokens);
+
+    /// <summary>
+    ///     Sends a message to the specified recipient, and CC's with the supplied subject and body using a custom from address
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">Who is receiving the email</param>
+    /// <param name="ccAddressList">Additional CC'ed emails</param>
+    /// <param name="subject">The message subject</param>
+    /// <param name="bodyHtml">The message body</param>
+    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
+    /// <param name="templateName">The optional custom template to override with</param>
+    /// <param name="senderKeyName">The a custom key for identifying a sender</param>
+    Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress,
+        IEnumerable<string> ccAddressList, string subject, string bodyHtml, List<KeyValuePair<string, string>> tokens,
+        string templateName, string senderKeyName = "");
 }
