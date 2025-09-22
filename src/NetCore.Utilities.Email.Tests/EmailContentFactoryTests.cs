@@ -11,8 +11,8 @@ namespace NetCore.Utilities.Email.Tests
 {
     public class EmailContentFactoryTests
     {
-        private const string RelativePathToDefault = "..\\..\\..\\Templates\\Default.html";
-        private const string RelativePathToSpecial = "..\\..\\..\\Templates\\Special.html";
+        private static readonly string RelativePathToDefault = Path.Combine("..", "..", "..", "Templates", "Default.html");
+        private static readonly string RelativePathToSpecial = Path.Combine("..", "..", "..", "Templates", "Special.html");
         private static Mock<IHostEnvironment> _hostingEnvironmentMock;
         private static Mock<IOptions<EmailTemplateSettings>> _emailTemplateSettingsMock;
         private readonly IEmailTemplateFactory _factory;
@@ -20,12 +20,12 @@ namespace NetCore.Utilities.Email.Tests
         public EmailContentFactoryTests()
         {
             _hostingEnvironmentMock = new Mock<IHostEnvironment>();
-            _hostingEnvironmentMock.Setup(h => h.ContentRootPath).Returns("..\\..\\..\\"); //Provides a path back to the root of the test project
+            _hostingEnvironmentMock.Setup(h => h.ContentRootPath).Returns(Path.Combine("..", "..", "..")); //Provides a path back to the root of the test project
             _emailTemplateSettingsMock = new Mock<IOptions<EmailTemplateSettings>>();
             _emailTemplateSettingsMock.Setup(s => s.Value).Returns(new EmailTemplateSettings
             {
-                DefaultTemplatePath = "Templates\\default.html",
-                AdditionalTemplates = new Dictionary<string, string> { { "Special", "Templates\\Special.html" }, { "Invalid", "invalid.html" } }
+                DefaultTemplatePath = Path.Combine("Templates", "Default.html"),
+                AdditionalTemplates = new Dictionary<string, string> { { "Special", Path.Combine("Templates", "Special.html") }, { "Invalid", "invalid.html" } }
             });
             _factory = new EmailTemplateFactory(_emailTemplateSettingsMock.Object, _hostingEnvironmentMock.Object);
         }
