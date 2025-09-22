@@ -151,23 +151,6 @@ public interface IEmailService
         string templateName, string senderKeyName = "");
 
     /// <summary>
-    ///     Creates a message with an attachment
-    /// </summary>
-    /// <param name="toAddress">The to address for the message</param>
-    /// <param name="ccAddressList">The address(ses) to add a CC's</param>
-    /// <param name="subject">The subject of the message</param>
-    /// <param name="fileContent">Attachment Content</param>
-    /// <param name="fileName">Attachment file name</param>
-    /// <param name="bodyHtml">The HTML body contents</param>
-    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
-    /// <param name="templateName">The optional custom template to override with</param>
-    /// <param name="senderKeyName">The a custom key for identifying a sender</param>
-    /// <returns></returns>
-    Task<bool> SendMessageWithAttachmentAsync(string toAddress, IEnumerable<string> ccAddressList, string subject,
-        byte[] fileContent, string fileName, string bodyHtml, List<KeyValuePair<string, string>> tokens,
-        string templateName = "", string senderKeyName = "");
-
-    /// <summary>
     ///     Sends a message to the specified recipient, with the supplied subject and body using a custom from address
     /// </summary>
     /// <param name="fromAddress">The address to be used as the sender</param>
@@ -230,4 +213,40 @@ public interface IEmailService
     Task<bool> SendWithCustomFromEmailAsync(string fromAddress, string fromName, string toAddress,
         IEnumerable<string> ccAddressList, string subject, string bodyHtml, List<KeyValuePair<string, string>> tokens,
         string templateName, string senderKeyName = "");
+
+    /// <summary>
+    ///     Creates a message with an attachment
+    /// </summary>
+    /// <param name="toAddress">The to address for the message</param>
+    /// <param name="ccAddressList">The address(ses) to add a CC's</param>
+    /// <param name="subject">The subject of the message</param>
+    /// <param name="fileContent">Attachment Content</param>
+    /// <param name="fileName">Attachment file name</param>
+    /// <param name="bodyHtml">The HTML body contents</param>
+    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
+    /// <param name="templateName">The optional custom template to override with</param>
+    /// <param name="senderKeyName">The a custom key for identifying a sender</param>
+    /// <returns></returns>
+    Task<bool> SendMessageWithAttachmentAsync(string toAddress, IEnumerable<string> ccAddressList, string subject,
+        byte[] fileContent, string fileName, string bodyHtml, List<KeyValuePair<string, string>> tokens,
+        string templateName = "", string senderKeyName = "");
+
+    /// <summary>
+    ///     Creates a message with an attachment
+    /// </summary>
+    /// <param name="fromAddress">The address to be used as the sender</param>
+    /// <param name="fromName">The name to be used as the sender</param>
+    /// <param name="toAddress">The to address for the message</param>
+    /// <param name="ccAddressList">The address(ses) to add a CC's</param>
+    /// <param name="subject">The subject of the message</param>
+    /// <param name="fileContent">Attachment Content</param>
+    /// <param name="fileName">Attachment file name</param>
+    /// <param name="bodyHtml">The HTML body contents</param>
+    /// <param name="tokens">A list of tokens that should be replaced within the email message</param>
+    /// <param name="templateName">The optional custom template to override with</param>
+    /// <param name="senderKeyName">The a custom key for identifying a sender</param>
+    /// <returns></returns>
+    Task<bool> SendWithCustomFromEmailAndAttachmentAsync(string fromAddress, string fromName, string toAddress, IEnumerable<string> ccAddressList, string subject,
+        byte[] fileContent, string fileName, string bodyHtml, List<KeyValuePair<string, string>> tokens,
+        string templateName = "", string senderKeyName = "");
 }
