@@ -25,7 +25,7 @@ namespace NetCore.Utilities.Email.Tests
             _emailTemplateSettingsMock.Setup(s => s.Value).Returns(new EmailTemplateSettings
             {
                 DefaultTemplatePath = "Templates\\default.html",
-                AdditionalTemplates = new Dictionary<string, string>{{"Special", "Templates\\Special.html"}, {"Invalid", "invalid.html"}}
+                AdditionalTemplates = new Dictionary<string, string> { { "Special", "Templates\\Special.html" }, { "Invalid", "invalid.html" } }
             });
             _factory = new EmailTemplateFactory(_emailTemplateSettingsMock.Object, _hostingEnvironmentMock.Object);
         }
@@ -124,7 +124,7 @@ namespace NetCore.Utilities.Email.Tests
             //Assert
             Assert.Equal(expectedBody, actualResult);
         }
-        
+
         [Fact]
         public void BuildEmailContent_ShouldReturnProperlyFormattedText_WithSubjectPreviewAndContent_AdditionalTemplate()
         {
