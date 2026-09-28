@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>ICG.NetCore.Utilities.Email</RootNamespace>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -10,8 +10,8 @@
   <PropertyGroup>
     <PackageId>ICG.NetCore.Utilities.Email</PackageId>
     <Title>NetCore Utilities Email</Title>
-    <Description>A library of .NET 9 utilities for working with email.  Used in conjunction with other packages.</Description>
-    <Copyright>Copyright 2021, IowaComputerGurus All Rights Reserved</Copyright>
+    <Description>A library of .NET 10 utilities for working with email.  Used in conjunction with other packages.</Description>
+    <Copyright>Copyright 2021-2026, IowaComputerGurus All Rights Reserved</Copyright>
     <PackageProjectUrl>https://github.com/IowaComputerGurus/netcore.utilities.email</PackageProjectUrl>
     <PackageTags>aspnetcore;utility;email</PackageTags>
     <RepositoryUrl>https://github.com/IowaComputerGurus/netcore.utilities.email</RepositoryUrl>
@@ -34,10 +34,10 @@
 	</ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.401">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

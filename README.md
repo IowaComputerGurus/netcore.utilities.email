@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/nuget/v/icg.netcore.utilities.email.svg) ![](https://img.shields.io/nuget/dt/icg.netcore.utilities.email.svg)
 
-This is a base library to provide utilities for working with email in .NET 6.  This project is used by more concrete implementations such as NetCore.Utilities.Email.Smtp.
+This is a base library to provide utilities for working with email in .NET 10. This project is used by more concrete implementations such as NetCore.Utilities.Email.Smtp.
 
 ## Breaking Changes (Version 7.0)
 
@@ -57,4 +57,3 @@ ICG has a number of other related projects as well
 * [NetCore.Utilities.Email.Smtp](https://www.github.com/iowacomputergurus/netcore.utilities.email.smtp)
 * [NetCore.Utilities.Spreadsheet](https://www.github.com/iowacomputergurus/netcore.utilities.spreadsheet)
 * [NetCore.Utilities.UnitTesting](https://www.github.com/iowacomputergurus/netcore.utilities.unittesting)
-
