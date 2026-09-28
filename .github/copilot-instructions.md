@@ -1,5 +1,5 @@
 # NetCore.Utilities.Email
-NetCore.Utilities.Email is a .NET 8.0 utility library for working with email templating and services. It provides email template processing functionality with token replacement and supports multiple template configurations. This is a foundational library used by other concrete email implementations like NetCore.Utilities.Email.Smtp.
+NetCore.Utilities.Email is a .NET 10.0 utility library for working with email templating and services. It provides email template processing functionality with token replacement and supports multiple template configurations. This is a foundational library used by other concrete email implementations like NetCore.Utilities.Email.Smtp.
 
 Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
 
@@ -24,7 +24,7 @@ Always reference these instructions first and fallback to search or bash command
 - **Solution file**: "NetCore Utilities Email.sln" (note the spaces in the name)
 
 ## Platform and CI Requirements
-- **Target Framework**: .NET 8.0
+- **Target Framework**: .NET 10.0
 - **CI Environment**: Windows (ci-build.yml runs on windows-latest)
 - **Local Development**: Works on any platform but tests may fail on non-Windows due to path separator issues
 - **NuGet**: Automatically generates packages on build (ICG.NetCore.Utilities.Email.*.nupkg)
